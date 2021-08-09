@@ -95,7 +95,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN") or None
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = (os.environ.get("UPSTREAM_REPO_URL")
-                     or "https://github.com/poocong/Pocong-Userbot")
+                     or "https://github.com/quipper886/Pocong-Userbot")
 
 # UPSTREAM_REPO_URL branch, the default is master
 UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH") or "pocong"
@@ -318,7 +318,7 @@ with bot:
         async def handler(event):
             sender = await event.message.get_sender()
             text = (
-                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\n [REPO](https://github.com/poocong/Pocong-Userbot) ...")
+                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\n [REPO](https://github.com/quipper886/Pocong-Userbot) ...")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
@@ -340,7 +340,7 @@ with bot:
                 result = builder.article(
                     "Please Use Only With .help Command",
                     text="{}\nTotal loaded modules: {}".format(
-                        "[PocongUserbot](https://github.com/poocong/Pocong-Userbot) modules helper.\n",
+                        "[PocongUserbot](https://github.com/quipper886/Pocong-Userbot) modules helper.\n",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -361,7 +361,7 @@ with bot:
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/poocong/Pocong-Userbot",
+                                "https://github.com/quipper886/Pocong-Userbot",
                             ),
                             custom.Button.url(
                                 "Channel",
