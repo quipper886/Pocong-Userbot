@@ -58,17 +58,17 @@ async def set_not_afk(event):
                 shite = await bot.send_message(event.chat_id, file=pic)
                 shites = await bot.send_message(
                     event.chat_id,
-                    f"**OK Saya Telah Kembali**\n\nDari AFK: {total_afk_time}",
+                    f"**Kiw Gua Balik Lagi**\n\nDari AFK: {total_afk_time}",
                 )
             else:
                 shite = await bot.send_message(
                     event.chat_id,
-                    f"**OK Saya Telah Kembali**\n\nDari AFK: {total_afk_time}",
+                    f"**Kiw Gua Balik Lagi**\n\nDari AFK: {total_afk_time}",
                     file=pic,
                 )
         except BaseException:
             shite = await bot.send_message(
-                event.chat_id, f"**OK Saya Telah Kembali**\n\nDari AFK: {total_afk_time}"
+                event.chat_id, f"**Kiw Gua Balik Lagi**\n\nDari AFK: {total_afk_time}"
             )
 
         except BaseException:
@@ -110,14 +110,15 @@ async def on_afk(event):
         msg = None
         if reason:
             message_to_reply = (
-                  f"┌ ❏AFK!\n"
-                + f"│┌ **User** {ALIVE_NAME}\n"
-                + f"│├ **Sejak** {total_afk_time} Yg Lalu\n"
-                + f"└└ **Karena** {reason}"
+                  f"╭──────•◈AFK◈•──────╮\n"
+                + f"│┌ User {ALIVE_NAME}\n"
+                + f"│├ Sejak {total_afk_time}\n"
+                + f"│└ Karena {reason}"\n"
+                + f"╰────────•◈•────────╯"
                 
             )
         else:
-            message_to_reply = f"❏ **Maaf Saya Sedang AFK!**\n" + \
+            message_to_reply = f"❏ **Gua Lagi AFK!**\n" + \
                 f"└ **Sejak : {total_afk_time}**"
         try:
             if pic.endswith((".tgs", ".webp")):
@@ -181,29 +182,29 @@ async def _(event):
                 if pic.endswith((".tgs", ".webp")):
                     await bot.send_message(event.chat_id, file=pic)
                     await bot.send_message(
-                        event.chat_id, f"#AFK\n**Saya OFFLINE Dulu**\n**Karena :** __{reason}__"
+                        event.chat_id, f"#AFK\n**Gua OFFLINE Dulu**\n**Karena :** __{reason}__"
                     )
                 else:
                     await bot.send_message(
-                        event.chat_id, f"#AFK\n**Saya OFFLINE Dulu**\n**Karena :** __{reason}__", file=pic
+                        event.chat_id, f"#AFK\n**Gua OFFLINE Dulu**\n**Karena :** __{reason}__", file=pic
                     )
             except BaseException:
                 await bot.send_message(
-                    event.chat_id, f"#AFK\n**Saya OFFLINE Dulu**\n**Karena :** __{reason}__"
+                    event.chat_id, f"#AFK\n**Gua OFFLINE Dulu**\n**Karena :** __{reason}__"
                 )
         else:
             try:
                 if pic.endswith((".tgs", ".webp")):
                     await bot.send_message(event.chat_id, file=pic)
                     await bot.send_message(
-                        event.chat_id, f"#AFK\n**Saya Offline dulu..**"
+                        event.chat_id, f"#AFK\n**Gua OFFLINE Dulu..**"
                     )
                 else:
                     await bot.send_message(
-                        event.chat_id, f"#AFK\n**Saya Offline dulu..**", file=pic
+                        event.chat_id, f"#AFK\n**Gua OFFLINE Dulu..**", file=pic
                     )
             except BaseException:
-                await bot.send_message(event.chat_id, f"#AFK\n**Saya Offline dulu..**")
+                await bot.send_message(event.chat_id, f"#AFK\n**Gua OFFLINE Dulu..**")
         await event.delete()
         try:
             if reason and pic:
